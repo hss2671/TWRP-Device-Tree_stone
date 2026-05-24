@@ -10,6 +10,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Download DeviceTree_3.zip
+        run: |
+          curl -L -o DeviceTree_3.zip https://github.com/hss2671/TWRP-Device-Tree_stone/raw/main/DeviceTree_3.zip
+
       - name: Set up unzip tool
         run: sudo apt-get install -y unzip
 
