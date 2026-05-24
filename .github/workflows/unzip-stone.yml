@@ -10,9 +10,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download DeviceTree_3.zip from release assets URL
+      - name: Download DeviceTree_3.zip from TENIRE pan direct link
         run: |
-          curl -L -A "Mozilla/5.0" -o DeviceTree_3.zip "https://release-assets.githubusercontent.com/github-production-release-asset/1247975623/d3da735f-cfa9-4bad-8457-543aac4230f2?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-24T05%3A47%3A21Z&rscd=attachment%3B+filename%3DDeviceTree_3.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-24T04%3A46%3A39Z&ske=2026-05-24T05%3A47%3A21Z&sks=b&skv=2018-11-09&sig=Uq15Go17j96ohf%2BE3hrFuyjiLTxeVykSosDyz7hgdK0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTU5OTk4NSwibmJmIjoxNzc5NTk4MTg1LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.xPcWSaeYzWG9auhPWs5FA3s1SF5S0t9sK1Q_sUhNF2Q&response-content-disposition=attachment%3B%20filename%3DDeviceTree_3.zip&response-content-type=application%2Foctet-stream"
+          curl -L -A "Mozilla/5.0" -o DeviceTree_3.zip "https://pan.tenire.com/down.php/c6bc8d868902bbce438a20359e187c47.zip"
 
       - name: Check downloaded file (for debug)
         run: |
