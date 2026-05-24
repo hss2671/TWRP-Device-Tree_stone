@@ -1,0 +1,33 @@
+name: Unzip xiaomi/stone/ and Commit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unzip-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up unzip tool
+        run: sudo apt-get install -y unzip
+
+      - name: Unzip DeviceTree_3.zip
+        run: |
+          unzip -o DeviceTree_3.zip "xiaomi/stone/*" -d extracted
+
+      - name: Copy xiaomi/stone/ contents to repo root
+        run: |
+          cp -rf extracted/xiaomi/stone/* .
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "解压 DeviceTree_3.zip 并添加 xiaomi/stone/ 文件" || echo "No changes to commit"
+          git push
